@@ -1,22 +1,21 @@
 #include <iostream>
-//#include<fstream>
-#include "LinearEquationsSys.h"
+#include "LES.h"
 #include "PrintToFile.h"
 
-using namespace std;
-
-const int M = 5, N = 12;
-int k;
+const int N = 15, M = 5;
+int k = 0;
 
 int main() {
-	k = 0;
-	LinearEquationsSys sys(N, k, M);
-	PrintToFile()(&sys, "LinearEquation");
-	GaussianElimination decision(sys);
-	//decision.firstStep();
-	//PrintToFile()(&decision, "FirstStep");
-	decision.triangularForm();
-	PrintToFile()(&decision, "TriangularForm");
+	LES les(N, M, k); // LES - linear equations system; Initializing of the system of linear equations;
+	PrintToFile()(les); // Print the system of linear equations;
+	les.firstStep(); // First step of calculating
+	PrintToFile()(les);
+	les.triangleForm(); // Calculating a triangle form of LES
+	PrintToFile()(les);
+	les.findSolution(); // Finding solution
+	PrintToFile()(les);
+
+	std::cout << std::fixed << les.relativeError();
 
 	system("pause");
 
