@@ -21,18 +21,17 @@ void PrintToFile::operator() (LES& les) {
 	if (les.state == "ForwardSweep") {
 		pr = 4;
 		w = 9;
-
 		for (int i = 0; i < les.n_; ++i) {
-			for (int j = 0; j < les.n_; ++j) {
-				if ((j - i) == 1) {
-					out << std::fixed << std::setprecision(pr) << std::setw(w) << les.coefs[i][j];
-				}
-				else {
-					if (j == i) {
-						out << " 1";
-					}
-				}
+			for (int j = 0; j < i; ++j) {
+				out << " &";
+			}
 
+			//out << " 1" << std::fixed << std::setprecision(pr) << std::setw(w) << les.coefs[i][2];
+			for (int j = 1; j < 3; ++j) {
+				out << std::fixed << std::setprecision(pr) << std::setw(w) << les.coefs[i][j];
+			}
+
+			for (int j = i + 2; j < les.n_; ++j) {
 				out << " &";
 			}
 
@@ -47,11 +46,13 @@ void PrintToFile::operator() (LES& les) {
 	w = 5;
 
 	for (int i = 0; i < les.n_; ++i) {
-		for (int j = 0; j < les.n_; ++j) {
-			if (abs(j - i) <= 1) {
-				out << std::fixed << std::setprecision(pr) << std::setw(w) << les.coefs[i][j];
-			}
-
+		for (int j = 0; j < i - 1; ++j) {
+			out << " &";
+		}
+		for (int j = 0; j < 3; ++j) {
+			out << std::fixed << std::setprecision(pr) << std::setw(w) << les.coefs[i][j];
+		}
+		for (int j = i + 2; j < les.n_; ++j) {
 			out << " &";
 		}
 
