@@ -353,3 +353,8 @@ MigrationBackup/
 
 *.aux
 *.log
+*.docx
+*.doc
+
+cmake-build-debug/
+cmake-build-release/
