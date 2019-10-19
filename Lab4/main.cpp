@@ -13,9 +13,9 @@ int main() {
   PrintToFile()(lesJ);
 
   int jIt = lesJ.findSolJakobianMethod(K, E);
-  int r05It = lesR05.findSolRelaxationMethod(K, E, 1.47);
-  int r1It = lesR1.findSolRelaxationMethod(K, E, 1.5);
-  int r15It = lesR15.findSolRelaxationMethod(K, E, 1.72);
+  int r05It = lesR05.findSolRelaxationMethod(K, E, 0.5);
+  int r1It = lesR1.findSolRelaxationMethod(K, E, 1);
+  int r15It = lesR15.findSolRelaxationMethod(K, E, 1.5);
 
   PrintToFile()(lesJ, jIt);
   PrintToFile()(lesR05, r05It);

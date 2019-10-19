@@ -4,7 +4,7 @@ LES::LES(ExtendedMatrix exMatrix)
     : mSize_(exMatrix.size()), matrix(exMatrix) {
 
   curSol_ = new float [mSize_];
-  prevSol_ = new float [mSize_] {};
+  prevSol_ = new float [mSize_];
 
   state = "LinearEquationsSystem";
 }

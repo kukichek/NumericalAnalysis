@@ -36,7 +36,7 @@ ExtendedMatrix::~ExtendedMatrix() {
   }
 }
 
-float* ExtendedMatrix::operator[] (int index) const {
+float* ExtendedMatrix::operator[](int index) const {
   return a[index];
 }
 
@@ -47,7 +47,7 @@ int ExtendedMatrix::size() const {
 void ExtendedMatrix::generateCoefs() {
   std::srand(std::time(0));
 
- for (int i = 0; i < mSize; ++i) {
+  for (int i = 0; i < mSize; ++i) {
     int sum = 0;
 
     for (int j = 0; j < mSize; ++j) {
@@ -59,7 +59,7 @@ void ExtendedMatrix::generateCoefs() {
     a[i][i] = -sum;
   }
 
-  a[0][0] ++;
+  a[0][0]++;
 }
 
 void ExtendedMatrix::generateCTerms(int solFirstVal) {
