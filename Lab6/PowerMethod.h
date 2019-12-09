@@ -18,7 +18,7 @@ class PowerMethod {
   void calcNextIt();
 
   float getFirstLambdaCurEigenVal(bool); // is equal lambda_1^k with respect to k = curI
-  std::vector<float> getFirstLambdaErrorVector(); // is equal to error on iteration curI
+  std::vector<float> getFirstLambdaErrorVector(bool); // is equal to error on iteration curI
 
   float getSecondLambdaEigenVal(std::vector<float>, std::vector<float>, std::vector<float>, float);
   std::vector<float> getSecondLambdaEigenVector(std::vector<float>, std::vector<float>, float);

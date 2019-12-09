@@ -46,7 +46,7 @@ int main() {
 
     powerMethod.calcNextIt();
 
-    errorVector = powerMethod.getFirstLambdaErrorVector();
+    errorVector = powerMethod.getFirstLambdaErrorVector(true);
     error = fabs(errorVector[0]);
     for (int i = 1; i < N; ++i) {
       if (fabs(error) < fabs(errorVector[i])) {
@@ -58,7 +58,21 @@ int main() {
                             powerMethod.getU(),
                             errorVector,
                             error,
-                            "lambda" + std::to_string(i));
+                            "lambdaSymmetric" + std::to_string(i));
+
+    errorVector = powerMethod.getFirstLambdaErrorVector(false);
+    error = fabs(errorVector[0]);
+    for (int i = 1; i < N; ++i) {
+      if (fabs(error) < fabs(errorVector[i])) {
+        error = fabs(errorVector[i]);
+      }
+    }
+
+    PrintToFile::printEigen(powerMethod.getFirstLambdaCurEigenVal(false),
+                            powerMethod.getU(),
+                            errorVector,
+                            error,
+                            "lambdaNotSymmetric" + std::to_string(i));
   }
 
   u_k = powerMethod.getU();

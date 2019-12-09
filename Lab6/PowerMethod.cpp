@@ -80,9 +80,9 @@ float PowerMethod::getFirstLambdaCurEigenVal(bool isSymmetric) {
   return lambda;
 }
 
-std::vector<float> PowerMethod::getFirstLambdaErrorVector() {
+std::vector<float> PowerMethod::getFirstLambdaErrorVector(bool isSymmetric) {
   int size = matrix.size();
-  float lambda = getFirstLambdaCurEigenVal(true);
+  float lambda = getFirstLambdaCurEigenVal(isSymmetric);
 
   std::vector<float> error(size);
 
