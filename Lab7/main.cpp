@@ -14,9 +14,9 @@ int main() {
   NewtonsMethod funcNewtonRoot({1, -52, 813, 291468, -841577});
   BisectionMethod funcBisecRoot({1, -52, 813, 291468, -841577});
 
-  std::cout << std::fixed << std::setprecision(11) << funcNewtonRoot.getX(-50) << std::endl;
-  std::cout << std::fixed << std::setprecision(11) << funcBisecRoot.getX(-55, -50) << std::endl;
+  std::cout << std::fixed << std::setprecision(11) << funcNewtonRoot.getX(-55) << std::endl;
+//  std::cout << std::fixed << std::setprecision(11) << funcBisecRoot.getX(-55, -50) << std::endl;
 
-  std::cout << std::fixed << std::setprecision(11) << funcNewtonRoot.getX(5) << std::endl;
-  std::cout << std::fixed << std::setprecision(11) << funcBisecRoot.getX(0, 5) << std::endl;
+  std::cout << std::fixed << std::setprecision(11) << funcNewtonRoot.getX(0) << std::endl;
+//  std::cout << std::fixed << std::setprecision(11) << funcBisecRoot.getX(0, 5) << std::endl;
 }
