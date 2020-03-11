@@ -140,7 +140,7 @@ std::vector<float> PowerMethod::getSecondLambdaErrorVector(std::vector<float> x,
     error[i] = 0;
 
     for (int j = 0; j < size; ++j) {
-      error[i] = matrix[i][j] * x[j];
+      error[i] += matrix[i][j] * x[j];
     }
 
     error[i] -= lambda2 * x[i];
